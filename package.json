@@ -4,13 +4,15 @@
   "description": "Simple static site template",
   "main": "main.ts",
   "scripts": {
-    "start": "bun --hot main.ts",
-    "build": "bun build main.ts --outdir=dist"
+    "start": "deno run --allow-net --allow-read main.ts",
+    "build": "deno bundle main.ts dist/main.js",
+    "deploy": "bun deploy.ts"
   },
   "dependencies": {
+    "freestyle-sandboxes": "^0.0.71",
     "hono": "^3.11.0"
   },
   "devDependencies": {
     "bun-types": "latest"
   }
-} 
+}

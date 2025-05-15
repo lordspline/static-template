@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { serveStatic } from "hono/bun";
+import { serveStatic } from "hono/deno";
 
 const app = new Hono();
 
@@ -9,4 +9,4 @@ app.use("*", serveStatic({ root: "./static" }));
 // Fallback to index.html for SPA routing
 app.get("*", serveStatic({ path: "./static/index.html" }));
 
-export default app; 
+Deno.serve(app.fetch); 
