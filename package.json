@@ -1,0 +1,16 @@
+{
+  "name": "my-static-site",
+  "version": "1.0.0",
+  "description": "Simple static site template",
+  "main": "main.ts",
+  "scripts": {
+    "start": "bun --hot main.ts",
+    "build": "bun build main.ts --outdir=dist"
+  },
+  "dependencies": {
+    "hono": "^3.11.0"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  }
+} 
